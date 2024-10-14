@@ -2,7 +2,7 @@ import { signup } from "@/app/sign-up/action";
 
 export default function SignUpForm() {
   return (
-    <form>
+    <form className="signupForm">
       <label htmlFor="name">İsim</label>
       <input id="name" name="name" type="text" placeholder="İsim" required />
       <label htmlFor="lastname">Soyisim</label>
@@ -11,7 +11,7 @@ export default function SignUpForm() {
       <input id="email" name="email" type="email" placeholder="usermail@gmail.com" required />
       <label htmlFor="password">Şifre</label>
       <input id="password" name="password" type="password" placeholder="*******" required />
-      <button formAction={signup}>Kayıt ol</button>
+      <button className="signUpBtn" formAction={signup}>Kayıt ol</button>
     </form>
   )
 }
