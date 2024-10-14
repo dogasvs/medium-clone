@@ -7,11 +7,11 @@ export default function SignUpForm() {
       <input id="name" name="name" type="text" placeholder="İsim" required />
       <label htmlFor="lastname">Soyisim</label>
       <input id="lastname" name="lastname" type="text" placeholder="Soyisim" required />
-      <label htmlFor="email">Email</label>
+      <label htmlFor="email">E-posta</label>
       <input id="email" name="email" type="email" placeholder="usermail@gmail.com" required />
-      <label htmlFor="password">Password:</label>
+      <label htmlFor="password">Şifre</label>
       <input id="password" name="password" type="password" placeholder="*******" required />
-      <button formAction={signup}>Sign up</button>
+      <button formAction={signup}>Kayıt ol</button>
     </form>
   )
 }

@@ -1,0 +1,102 @@
+.loginPage {
+  display: flex;
+  align-items: center ;
+  justify-content: space-between;
+}
+
+.loginSection {
+  margin-inline: 200px;
+
+  h1 {
+    margin-bottom: 60px;
+  }
+
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 7px;
+  }
+
+  input {
+    width: 400px;
+    padding: 7px;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  }
+
+  .loginBtn {
+    margin-block: 20px;
+    cursor: pointer;
+    padding-block: 6px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: transparent;
+    background-color: #3A5B22;
+    color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+  .loginBtn:hover {
+    background-color: #77aa52;;
+  }
+
+  .or {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+
+    p {
+      margin-inline: 10px;
+    }
+
+    hr {
+      width: 170px;
+      border: 1px solid #F5F5F5;
+    }
+  }
+
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginOptionBtns {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 25px;
+}
+
+.google, .apple {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+  border: 1.5px solid #D9D9D9;
+  padding: 4px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: inset rgba(99, 99, 99, 0.2) 1px 0px 5px 0px;
+}
+
+
+.accountCreation {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-inline: 100px;
+
+  a {
+    border: transparent;
+    background-color: transparent;
+    color: #0F3DDE;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+}

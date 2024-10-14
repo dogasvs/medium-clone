@@ -1,13 +1,13 @@
-import { login, signup } from "@/app/login/action";
+import { login } from "@/app/login/action";
 
 export default function LoginForm() {
   return (
-    <form>
-      <label htmlFor="email">Email:</label>
+    <form className="loginForm">
+      <label htmlFor="email">E-Posta </label>
       <input id="email" name="email" type="email"  />
-      <label htmlFor="password">Password:</label>
+      <label htmlFor="password">Şifre </label>
       <input id="password" name="password" type="password"  />
-      <button formAction={login}>Log in</button>
+      <button className="loginBtn" formAction={login}>Kayıt Ol</button>
     </form>
   )
 }
