@@ -1,50 +1,38 @@
 header {
-  margin-inline: 30px;
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  
-  .accountMenu {
+  justify-content: space-around;
+  padding: 10px;
+
+  .textHeaderTitle {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }  
+
+  .textHeaderAccountMenu {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 
-    .writeTextBtn {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-  }
-
-  .title {
-    display: flex;
-    align-items: baseline;
-    gap: 40px;
-
-    input {
-      background-color: #f9f9f9;
+    .addPostBtn {
+      cursor: pointer;
       border: transparent;
-      border-radius: 50px;
-      padding: 10px 40px; 
+      background-color: #0C730D;
+      color: #fff;
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 14px;
     }
 
-    svg {
-      position: relative;
-      bottom: 35px;
-      left: 10px;
+    .addPostBtn:hover {
+      background-color: #09550a;
     }
-
   }
 }
 
-hr {
-  border: 0.5px solid #f2f2f2;
-}
-
-.content {
-  margin-inline: 150px;
+.content  {
+  margin-inline: 400px;
 }
 
 .profileBtn {

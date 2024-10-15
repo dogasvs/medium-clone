@@ -1,7 +1,9 @@
-import SignOut from "@/app/login/action";
 import Search from "@/svgs/search";
 import { createClient } from "@/utils/supabase/server";
 import ProfileBtn from "./profile-btn";
+import MorePosts from "@/svgs/more-posts-btn";
+import Notifications from "@/svgs/notifications";
+import Link from "next/link";
 
 export default async function MainHeader() {
   const supabase = createClient();
@@ -20,7 +22,9 @@ export default async function MainHeader() {
 
 
         {user? (
-          <ul>
+          <ul className="accountMenu">
+            <li> <Link href={"/new-post"} className="writeTextBtn"> <MorePosts /> Write </Link> </li>
+            <li> <Notifications />  </li>
             <li> <ProfileBtn user={user} /> </li>
           </ul>
         ) : (
