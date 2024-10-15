@@ -1,6 +1,7 @@
 import SignOut from "@/app/login/action";
 import Search from "@/svgs/search";
 import { createClient } from "@/utils/supabase/server";
+import ProfileBtn from "./profile-btn";
 
 export default async function MainHeader() {
   const supabase = createClient();
@@ -20,12 +21,7 @@ export default async function MainHeader() {
 
         {user? (
           <ul>
-            <li> D </li>
-            <li>
-              <form action={SignOut}>
-                <button>Çıkış yap</button>
-              </form>
-            </li>
+            <li> <ProfileBtn user={user} /> </li>
           </ul>
         ) : (
          null
