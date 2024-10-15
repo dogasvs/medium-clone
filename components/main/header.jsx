@@ -1,6 +1,6 @@
 import SignOut from "@/app/login/action";
+import Search from "@/svgs/search";
 import { createClient } from "@/utils/supabase/server";
-import Link from "next/link";
 
 export default async function MainHeader() {
   const supabase = createClient();
@@ -9,15 +9,18 @@ export default async function MainHeader() {
 
   return (
     <header> 
-      <ul>
-        <li>Anasayfa</li>
-        <li>Hakkımda</li>
-        <li>İletişim</li>
-      </ul>
+      <div className="title">
+      <h1>Medium C</h1>
+        <form action="">
+          <input type="text" placeholder="Search" />
+          <Search />
+        </form>
+      </div>
+
 
         {user? (
           <ul>
-            <li>  Hoşgeldin {user.email} </li>
+            <li> D </li>
             <li>
               <form action={SignOut}>
                 <button>Çıkış yap</button>
@@ -25,10 +28,7 @@ export default async function MainHeader() {
             </li>
           </ul>
         ) : (
-          <ul>
-            <Link href={"/login"}> Giriş yap </Link>
-            <Link href={"/login"}> Kayıt ol </Link>
-          </ul>
+         null
         )}
     </header>
   )

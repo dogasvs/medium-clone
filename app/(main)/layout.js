@@ -1,10 +1,14 @@
 import MainHeader from "@/components/main/header";
+import "./main.css"
 
 export default function MainLayout({children}) {
   return (
-    <div>
+    <div className="mainContainer">
       <MainHeader />
-      {children}
+      <hr />
+      <div className="content">
+         {children}
+      </div>
     </div>
   )
 }
