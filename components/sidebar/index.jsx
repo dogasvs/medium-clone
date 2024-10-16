@@ -1,11 +1,11 @@
 "use client"
-import { AddComment } from "@/app/(add-posts)/posts/[id]/new-comment/actions";
+import { AddComment } from "@/app/(main)/posts/[id]/new-comment/actions";
 import { createClient } from "@/utils/supabase/client"
 import { useEffect, useState } from "react";
 import {useFormState} from "react-dom";
 
 export default function Sidenav( {post_id} ) {
-  const [comment, setComment] = useState(null);
+  const [comment, setComment] = useState([]);
   const [state, action] = useFormState(AddComment, {message: null, error: null});
   
   useEffect(() => {
@@ -14,7 +14,8 @@ export default function Sidenav( {post_id} ) {
       const {data, error} = await supabase
       .from('comments')
       .select()
-      console.log(data);
+      .eq('post_id', post_id)
+      
       setComment(data);
     }
     GetData()
@@ -22,7 +23,7 @@ export default function Sidenav( {post_id} ) {
 
   return (
     <div className="sidenav">
-      <h1>Resposes</h1>
+      <h1>Resposes <span>{comment.length}</span></h1>
       <form action={action}>
         <input name="comment" type="text" placeholder="What are your thoughts?" />
         <input name="post_id" type="hidden" value={post_id} />

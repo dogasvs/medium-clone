@@ -1,7 +1,6 @@
 "use client"
 import Comments from "@/svgs/comments";
 import { useState } from "react";
-import "../addposts.css"
 import Sidenav from "@/components/sidebar";
 
 export default function ShowCommentBtn( {post_id} ) {

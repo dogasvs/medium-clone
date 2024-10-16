@@ -1,5 +1,5 @@
 import TextHeader from "@/components/main/text-header";
-import "../(add-posts)/addposts.css"
+import "../addposts.css"
 
 export default function AddPostLayout({children}) {
   return (
