@@ -20,7 +20,7 @@ export default async function PostDetailPage({params}) {
         <p>{data.content}</p>
       </div>
       <div className="postActions">
-        <ShowCommentBtn />
+        <ShowCommentBtn post_id={data.id} />
       </div>
       </>
 
