@@ -1,8 +1,8 @@
-import { SavedPost } from "@/app/(add-posts)/new-post/actions";
 import More from "@/svgs/more";
 import Notifications from "@/svgs/notifications";
 import { createClient } from "@/utils/supabase/server";
 import ProfileBtn from "./profile-btn";
+import Link from "next/link";
 
 export default async function TextHeader() {
   const supabase = createClient();
@@ -11,7 +11,7 @@ export default async function TextHeader() {
   return (
     <header>
       <div className="textHeaderTitle">
-        <h1>Medium C</h1>
+        <Link href={"/"}>Medium C</Link>
         <p>Draft in {user.email}</p>
         <p>Saved</p>
       </div>

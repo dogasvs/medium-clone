@@ -13,7 +13,7 @@ export default async function MainHeader() {
   return (
     <header> 
       <div className="title">
-      <h1>Medium C</h1>
+        <Link href={"/"}>Medium C</Link>
         <form action="">
           <input type="text" placeholder="Search" />
           <Search />
