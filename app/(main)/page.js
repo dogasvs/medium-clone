@@ -1,5 +1,6 @@
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
+import "./main.css"
 
 export default async function Home() {
   const supabase = createClient();
@@ -13,7 +14,7 @@ export default async function Home() {
     <>
       {data.map((x, i) => (
         <Link href={`/posts/${x.id}`}>
-        <div key={i}>
+        <div className="post" key={i}>
           <strong> {x.title} </strong>
           <p>{x.content}</p>
         </div>

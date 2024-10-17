@@ -1,7 +1,11 @@
+a {
+  text-decoration: none;
+}
+
 header {
   margin-inline: 30px;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   
   .accountMenu {
@@ -120,7 +124,6 @@ hr {
 header {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
 
   .textHeaderTitle {
     display: flex;
@@ -245,3 +248,15 @@ header {
   }
 }
 
+.post {
+  margin-block: 22px;
+
+  strong {
+    color: black;
+    font-weight: bold;
+  }
+
+  p {
+    color: #6B6B6B;
+  }
+}
