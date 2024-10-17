@@ -2,6 +2,10 @@ import { createClient } from "@/utils/supabase/server"
 import { notFound } from "next/navigation";
 import ShowCommentBtn from "../show-comment-btn";
 import LikeBtn from "../add-like/like-btn";
+import KaydetBos from "@/svgs/kaydet";
+import MediaSvg from "@/svgs/media";
+import ShareSvg from "@/svgs/share";
+import More from "@/svgs/more";
 
 export default async function PostDetailPage({params}) {
   const supabase = createClient();
@@ -24,13 +28,21 @@ export default async function PostDetailPage({params}) {
 
     return (
       <>
-      <div className="post">
+      <div className="postDetail">
         <h1>{data.title}</h1>
-        <p>{data.content}</p>
-      </div>
       <div className="postActions">
-        <ShowCommentBtn post_id={data.id} />
-        <LikeBtn postLike={postLike} post_id={data.id} />
+        <div className="ItemPostDetails">
+          <LikeBtn postLike={postLike} post_id={data.id} />
+          <ShowCommentBtn post_id={data.id} />
+        </div>
+        <div className="ItemPostDetails">
+          <KaydetBos postLike={postLike} post_id={data.id} />
+          <MediaSvg />
+          <ShareSvg />
+          <More />
+        </div>
+      </div>
+        <p>{data.content}</p>
       </div>
       </>
 

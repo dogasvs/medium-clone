@@ -55,7 +55,7 @@ hr {
 }
 
 .content {
-  margin-inline: 150px;
+  margin-inline: 300px;
 }
 
 .profileBtn {
@@ -86,113 +86,7 @@ hr {
   margin: 0;
   border-radius: 5px;
   display: flex;
-  gap: 8px;
-  flex-direction: column;
-  padding: 16px 20px;
-  border-radius: 3px;
-
-  li {
-    color: #6B6B6B;
-    cursor: pointer; 
-    display: flex;
-    align-items: center;
-    gap: 7px;
-
-    form {
-      button  {
-        color: #6B6B6B;
-        cursor: pointer;
-        padding: 0;
-        border: transparent;
-        background-color: transparent;
-      }
-
-      button:hover {
-        color: black;
-      }
-    }
-  }
-
-  li:hover {
-    color: black;
-  }
-}
-
-
-
-
-header {
-  display: flex;
-  justify-content: space-between;
-
-  .textHeaderTitle {
-    display: flex;
-    align-items: baseline;
-    gap: 20px;
-
-    a {
-      text-decoration: none;
-      color: black;
-      font-weight: bold;
-      font-size: 40px;
-    }
-  }  
-
-  .textHeaderAccountMenu {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    .addPostBtn {
-      cursor: pointer;
-      border: transparent;
-      background-color: #0C730D;
-      color: #fff;
-      border-radius: 100px;
-      padding: 5px 14px;
-      font-size: 14px;
-    }
-
-    .addPostBtn:hover {
-      background-color: #09550a;
-    }
-  }
-}
-
-.content  {
-  margin-inline: 400px;
-}
-
-.profileBtn {
-  cursor: pointer;
-  border: transparent;
-  background-color: #967070;
-  color: #fff;
-  width: 32px;
-  height: 32px;
-  border-radius: 60px;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-align: center;
-}
-
-.profileBtn:hover {
-  background-color: #7e4e4e;
-}
-
-.dropdown-menu {
-  width: 260px;
-  position: absolute;
-  right: 20px;
-  background-color: rgb(255, 255, 255);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  border-radius: 5px;
-  display: flex;
-  gap: 8px;
+  gap: 10px;
   flex-direction: column;
   padding: 16px 20px;
   border-radius: 3px;
@@ -237,12 +131,10 @@ header {
   box-shadow: rgba(100, 100, 111, 0.2) -20px 0px 29px 6px;
   animation: slidein 0.5s forwards;
 }
-
 @keyframes slidein{
   0%{
     right: -100%;
   }
-
   100%{
     right: 0;
   }
@@ -254,9 +146,50 @@ header {
   strong {
     color: black;
     font-weight: bold;
+    font-size: 24px;
   }
 
   p {
     color: #6B6B6B;
+  }
+}
+
+.postInteraction {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-block: 20px;
+
+  .Item:first-child {
+    p {
+      margin-left: 10px;
+    }
+  }
+
+  .Item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+.postActions {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px #F2F2F2;
+  border-top: solid 1px #F2F2F2;
+  padding: 6px 8px;
+  margin: 32px 0 0;
+
+  .ItemPostDetails {
+    display: flex;
+    gap: 30px;
+    align-items: baseline;
+
+    button {
+      border: transparent;
+      background-color: transparent;
+      cursor: pointer;
+    }
   }
 }
