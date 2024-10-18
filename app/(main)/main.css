@@ -88,7 +88,7 @@ hr {
   display: flex;
   gap: 10px;
   flex-direction: column;
-  padding: 16px 20px;
+  padding: 22px 24px;
   border-radius: 3px;
 
   li {
@@ -96,7 +96,7 @@ hr {
     cursor: pointer; 
     display: flex;
     align-items: center;
-    gap: 7px;
+    gap: 10px;
 
     form {
       button  {
@@ -130,7 +130,56 @@ hr {
   padding-top: 60px;
   box-shadow: rgba(100, 100, 111, 0.2) -20px 0px 29px 6px;
   animation: slidein 0.5s forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  overflow-y: auto; 
 }
+
+.commentAddArea {
+  height: 233px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #242424;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 8px;
+  width: 100%;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  overflow-y: auto; 
+}
+
+.comment {
+  line-height: 32px;
+  color: #6B6B6B;
+  font-size: 20px;
+  letter-spacing: -0.003em;
+}
+
+.formButtons {
+  position: relative;
+  bottom: 67px;
+  left: 211px;
+
+  .respondBtn {
+    border-color: transparent;
+    background-color:  rgb(26, 137, 23);
+    border-radius: 99em;
+    padding: 5px 12px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 20px;
+    cursor: pointer;
+  }
+
+  .respondBtn:disabled {
+    opacity: 0.3;
+}
+}
+
 @keyframes slidein{
   0%{
     right: -100%;
@@ -164,7 +213,7 @@ hr {
     line-height: 52px;
   }
 
-  p {
+  .dataContent {
     line-height: 32px;
     color: #6B6B6B;
     font-size: 20px;
@@ -219,7 +268,7 @@ hr {
     gap: 30px;
     align-items: baseline;
 
-    button {
+    button:not(.respondBtn) {
       border: transparent;
       background-color: transparent;
       cursor: pointer;

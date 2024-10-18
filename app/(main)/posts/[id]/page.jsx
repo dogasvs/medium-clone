@@ -26,6 +26,13 @@ export default async function PostDetailPage({params}) {
       .eq('user_id', user.id)
       .single();
 
+    const {data: bookmarks} = await supabase
+      .from("bookmarks")
+      .select()
+      .eq('post_id', data.id)
+      .eq('user_id', user.id)
+      .single();
+
     if(!data) return notFound();
 
     return (
@@ -39,13 +46,13 @@ export default async function PostDetailPage({params}) {
           <ShowCommentBtn post_id={data.id} />
         </div>
         <div className="ItemPostDetails">
-          <KaydetBtn postLike={postLike} post_id={data.id} />
+          <KaydetBtn bookmarks={bookmarks} post_id={data.id} />
           <MediaSvg />
           <ShareSvg />
           <More />
         </div>
       </div>
-        <p>{data.content}</p>
+        <p className="dataContent">{data.content}</p>
       </div>
       </>
 

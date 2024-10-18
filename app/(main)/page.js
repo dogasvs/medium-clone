@@ -20,11 +20,15 @@ export default async function Home() {
 
   console.log(data);
 
+  const getCommentCountForPost = (postId) => {
+    return comments.filter((comment) => comment.post_id === postId).length;
+  };
+
   return (
     <>
       {data.map((x, i) => (
-        <Link href={`/posts/${x.id}`}>
-        <div className="post" key={i}>
+        <Link href={`/posts/${x.id}`} key={x.id}>
+        <div className="post">
           <strong> {x.title} </strong>
           <p>{x.content}</p>
           <div className="postInteraction">
@@ -39,7 +43,7 @@ export default async function Home() {
               </div>
               <div className="Item">
                 <PostInteractıonComment />
-                <p>{comments.length}</p>
+                <p>{getCommentCountForPost(x.id)}</p>
               </div>
             </div>
             <div className="postInteractionPart">

@@ -5,6 +5,7 @@ import Library from "@/svgs/library";
 import Profile from "@/svgs/profile";
 import StatsSvg from "@/svgs/stats";
 import Stories from "@/svgs/stories";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function ProfileBtn({ user }) {
@@ -16,7 +17,7 @@ export default function ProfileBtn({ user }) {
       {isOpen && (
         <ul className="dropdown-menu">
           <li> <Profile /> Profile</li>
-          <li> <Library /> Library</li>
+           <Link href={"/library"}> <li> <Library /> Library</li> </Link> 
           <li> <Stories /> Stories</li>
           <li> <StatsSvg /> Stats</li>
           <hr />

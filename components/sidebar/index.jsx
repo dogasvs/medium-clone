@@ -19,20 +19,24 @@ export default function Sidenav( {post_id} ) {
       setComment(data);
     }
     GetData()
-  }, [])
+  }, [post_id])
 
   return (
     <div className="sidenav">
-      <h1>Resposes <span>{comment.length}</span></h1>
+      <h1>Responses <span>{comment.length}</span></h1>
       <form action={action}>
-        <input name="comment" type="text" placeholder="What are your thoughts?" />
+        <textarea required className="commentAddArea" name="comment" type="text" placeholder="What are your thoughts?" />
         <input name="post_id" type="hidden" value={post_id} />
-        <button>Ekle</button>
+        <div className="formButtons">
+          <button className="cancelBtn" >Cancel</button>
+          <button type="submit" className="respondBtn">Respond</button>
+        </div>
       </form>
+
       {comment && 
         comment.map((x,i) =>
-          <div key={i}>
-            <p>{x.comments}</p>
+          <div className="commentItem" key={i}>
+            <p className="comment">{x.comments}</p>
           </div>
       )}
     </div>

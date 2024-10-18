@@ -5,9 +5,9 @@ import KaydetDolu from "@/svgs/kaydet/kaydetDoluBtn";
 import KaydetBos from "@/svgs/kaydet";
 import { AddKaydet } from "./action";
 
-export default function KaydetBtn({post_id, postLike}) {
+export default function KaydetBtn({post_id, bookmarks}) {
   const [state, action] = useFormState(AddKaydet, {message: null, error: null});
-  const [isLiked, setIsLiked] = useState(!!postLike);
+  const [isLiked, setIsLiked] = useState(!!bookmarks);
 
   const handleLikeClick = () => {
     setIsLiked(!isLiked); 
@@ -18,7 +18,7 @@ export default function KaydetBtn({post_id, postLike}) {
       <form action={action}>
         <input type="hidden" name="postId" value={post_id} />
         <button onClick={handleLikeClick}>
-            {isLiked ? <KaydetDolu postLike={postLike} /> :  <KaydetBos postLike={postLike} />}
+            {isLiked ? <KaydetDolu /> :  <KaydetBos />}
           </button>
       </form>
     </>

@@ -2,7 +2,6 @@
 import BosKalpBtn from "@/svgs/like-btn";
 import { AddLike } from "./actions";
 import { useFormState } from "react-dom";
-import Alkis from "@/svgs/alkis";
 import { useState } from "react";
 import DoluAlkis from "@/svgs/like-btn/dolu-btn";
 
@@ -19,7 +18,7 @@ export default function LikeBtn({post_id, postLike}) {
       <form action={action}>
         <input type="hidden" name="postId" value={post_id} />
         <button onClick={handleLikeClick}>
-            {isLiked ? <DoluAlkis postLike={postLike} /> :  <BosKalpBtn postLike={postLike} />}
+            {isLiked ? <DoluAlkis  /> :  <BosKalpBtn  />}
           </button>
       </form>
     </>

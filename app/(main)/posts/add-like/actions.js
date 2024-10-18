@@ -9,7 +9,7 @@ export async function AddLike(prevState, formData) {
   const { data: {user} } = await supabase.auth.getUser();
 
   const postId = formData.get("postId");
-
+  
   const {data: postLike, error } = await supabase
     .from('postLike')
     .select('*')
@@ -27,8 +27,9 @@ export async function AddLike(prevState, formData) {
       const {data: doa, error } = await supabase
         .from('postLike')
         .insert( {user_id: user.id, post_id: postId} );
-        console.log(doa, error);
     }
+
+    console.log(postId);
 
     revalidatePath('/', "layout");
 }

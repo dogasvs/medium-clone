@@ -1,6 +1,7 @@
 "use server"
 
 import { createClient } from "@/utils/supabase/server";
+import { revalidatePath } from "next/cache";
 
 export async function AddComment(prevState, formData) {
   console.log(formData);
@@ -21,6 +22,5 @@ export async function AddComment(prevState, formData) {
       console.log(error);
     }
 
-    console.log(comments);
-
+    revalidatePath('/', 'layout');
 }
