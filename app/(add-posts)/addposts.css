@@ -1,6 +1,6 @@
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 
   .textHeaderTitle {
@@ -102,4 +102,16 @@ header {
   }
 }
 
+.submitPost {
+  input, textarea {
+    border: none;
+    padding: 50px;
+    font-size: 40px;
+  }
 
+  input:focus,
+  textarea:focus {
+  border: none;
+  outline: none;
+}
+}

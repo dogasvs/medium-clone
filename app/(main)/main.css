@@ -130,9 +130,6 @@ hr {
   padding-top: 60px;
   box-shadow: rgba(100, 100, 111, 0.2) -20px 0px 29px 6px;
   animation: slidein 0.5s forwards;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   padding: 24px;
   overflow-y: auto; 
 }
