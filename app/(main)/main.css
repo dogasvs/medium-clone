@@ -134,6 +134,12 @@ hr {
   overflow-y: auto; 
 }
 
+.sidenavTitle {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
 .commentAddArea {
   height: 233px;
   padding: 10px 14px;
@@ -170,6 +176,7 @@ hr {
     color: #fff;
     line-height: 20px;
     cursor: pointer;
+    margin-left: 5px;
   }
 
   .respondBtn:disabled {
@@ -271,4 +278,36 @@ hr {
       cursor: pointer;
     }
   }
+}
+
+.libraryTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  margin-top: 52px;
+
+  h1 {
+    letter-spacing: -0.011em;
+    line-height: 52px;
+    font-size: 42px;
+  }
+
+  .newList  {
+    background-color: rgb(26, 137, 23);
+    padding: 8px 20px;
+    text-align: center;
+    border-radius: 99em;
+    cursor: pointer;
+    border: transparent;
+    color: #fff;
+    font-weight: 500;
+  }
+}
+
+.libraryCategory ul {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  gap: 20px;
+  margin-bottom: 16px;
 }

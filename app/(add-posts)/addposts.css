@@ -38,6 +38,16 @@ header {
   }
 }
 
+.submitPostBtn {
+  cursor: pointer;
+  border: transparent;
+  background-color: #0C730D;
+  color: #fff;
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-size: 14px;
+}
+
 .content  {
   margin-inline: 400px;
 }

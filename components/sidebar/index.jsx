@@ -1,5 +1,6 @@
 "use client"
 import { AddComment } from "@/app/(main)/posts/[id]/new-comment/actions";
+import CommentCloseSvg from "@/svgs/comment-close-btn";
 import { createClient } from "@/utils/supabase/client"
 import { useEffect, useState } from "react";
 import {useFormState} from "react-dom";
@@ -23,7 +24,10 @@ export default function Sidenav( {post_id} ) {
 
   return (
     <div className="sidenav">
-      <h1>Responses <span>{comment.length}</span></h1>
+      <div className="sidenavTitle">
+        <h1>Responses <span>{comment.length}</span></h1>
+        <button> <CommentCloseSvg /> </button>
+      </div>
       <form action={action}>
         <textarea required className="commentAddArea" name="comment" type="text" placeholder="What are your thoughts?" />
         <input name="post_id" type="hidden" value={post_id} />

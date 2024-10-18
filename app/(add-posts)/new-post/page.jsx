@@ -8,7 +8,7 @@ export default function NewPost() {
         <br />
         <textarea name="content" id="" placeholder="yazı içeriğini giriniz "></textarea>
         <br />
-        <button>Gönder</button>
+        <button className="submitPostBtn">Gönder</button>
       </form>
     </div>
   )

@@ -21,13 +21,13 @@ export default async function Library() {
         </ul>
         <hr />
       </div>
-      <div className="savedPostList">
+      {/* <div className="savedPostList">
         {data.map((x,i) => (
           <div className="savedPost" key={i}>
             <p>{x.post_id}</p>
           </div>
         ))}
-      </div>
+      </div> */}
     
     </div>
   )
