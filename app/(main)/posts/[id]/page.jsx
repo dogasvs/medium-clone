@@ -6,6 +6,8 @@ import KaydetBos from "@/svgs/kaydet";
 import MediaSvg from "@/svgs/media";
 import ShareSvg from "@/svgs/share";
 import More from "@/svgs/more";
+import Yildiz from "@/svgs/yildiz";
+import KaydetBtn from "./bookmarks/kaydet";
 
 export default async function PostDetailPage({params}) {
   const supabase = createClient();
@@ -29,6 +31,7 @@ export default async function PostDetailPage({params}) {
     return (
       <>
       <div className="postDetail">
+        <div className="postDetailCreated"> <Yildiz /> <span>Member-only story</span> </div>
         <h1>{data.title}</h1>
       <div className="postActions">
         <div className="ItemPostDetails">
@@ -36,7 +39,7 @@ export default async function PostDetailPage({params}) {
           <ShowCommentBtn post_id={data.id} />
         </div>
         <div className="ItemPostDetails">
-          <KaydetBos postLike={postLike} post_id={data.id} />
+          <KaydetBtn postLike={postLike} post_id={data.id} />
           <MediaSvg />
           <ShareSvg />
           <More />

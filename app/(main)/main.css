@@ -144,7 +144,7 @@ hr {
   margin-block: 22px;
 
   strong {
-    color: black;
+    color: #242424;
     font-weight: bold;
     font-size: 24px;
   }
@@ -154,11 +154,44 @@ hr {
   }
 }
 
+.postDetail {
+  h1 {
+    color: #242424;
+    font-weight: bold;
+    font-size: 42px;
+    margin-bottom: 32px;
+    letter-spacing: -0.011em;
+    line-height: 52px;
+  }
+
+  p {
+    line-height: 32px;
+    color: #6B6B6B;
+    font-size: 20px;
+    margin-top: 2.14em;
+    letter-spacing: -0.003em;
+  }
+}
+
+.postDetailCreated {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-block: 40px;
+}
+
 .postInteraction {
   display: flex;
   align-items: center;
-  gap: 40px;
+  justify-content: space-between;
   margin-block: 20px;
+
+  .postInteractionPart {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-block: 20px;
+  }
 
   .Item:first-child {
     p {

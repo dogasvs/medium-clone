@@ -1,13 +1,12 @@
 "use client"
-import BosKalpBtn from "@/svgs/like-btn";
-import { AddLike } from "./actions";
 import { useFormState } from "react-dom";
-import Alkis from "@/svgs/alkis";
 import { useState } from "react";
-import DoluAlkis from "@/svgs/like-btn/dolu-btn";
+import KaydetDolu from "@/svgs/kaydet/kaydetDoluBtn";
+import KaydetBos from "@/svgs/kaydet";
+import { AddKaydet } from "./action";
 
-export default function LikeBtn({post_id, postLike}) {
-  const [state, action] = useFormState(AddLike, {message: null, error: null});
+export default function KaydetBtn({post_id, postLike}) {
+  const [state, action] = useFormState(AddKaydet, {message: null, error: null});
   const [isLiked, setIsLiked] = useState(!!postLike);
 
   const handleLikeClick = () => {
@@ -19,7 +18,7 @@ export default function LikeBtn({post_id, postLike}) {
       <form action={action}>
         <input type="hidden" name="postId" value={post_id} />
         <button onClick={handleLikeClick}>
-            {isLiked ? <DoluAlkis postLike={postLike} /> :  <BosKalpBtn postLike={postLike} />}
+            {isLiked ? <KaydetDolu postLike={postLike} /> :  <KaydetBos postLike={postLike} />}
           </button>
       </form>
     </>
