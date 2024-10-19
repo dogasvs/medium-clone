@@ -27,7 +27,6 @@ export async function AddKaydet(prevState, formData) {
       const {data: postthebeSaved, error } = await supabase
         .from('bookmarks')
         .insert( {user_id: user.id, post_id: postId} );
-        console.log(postthebeSaved, error);
     }
 
     revalidatePath('/', "layout");

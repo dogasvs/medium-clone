@@ -238,25 +238,25 @@ hr {
   align-items: center;
   justify-content: space-between;
   margin-block: 20px;
-
-  .postInteractionPart {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-block: 20px;
-  }
-
+  
   .Item:first-child {
     p {
       margin-left: 10px;
     }
   }
-
+  
   .Item {
     display: flex;
     align-items: center;
     gap: 6px;
   }
+}
+
+.postInteractionPart {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-block: 20px;
 }
 
 .postActions {

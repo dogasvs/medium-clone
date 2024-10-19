@@ -19,19 +19,27 @@ export default async function PostDetailPage({params}) {
 
     const {data: {user}, error: userError} = await supabase.auth.getUser();
 
-    const {data: postLike} = await supabase
-      .from("postLike")
-      .select()
-      .eq('post_id', data.id)
-      .eq('user_id', user.id)
-      .single();
+    let postLikeVar;
+    let bookmarksVar;
 
-    const {data: bookmarks} = await supabase
-      .from("bookmarks")
-      .select()
-      .eq('post_id', data.id)
-      .eq('user_id', user.id)
-      .single();
+    if(user) {
+      const {data: postLike, error: postLikeError} = await supabase
+        .from("postLike")
+        .select()
+        .eq('post_id', data.id)
+        .eq('user_id', user.id)
+        .single();
+  
+      const {data: bookmarks, error: bookmarksError} = await supabase
+        .from("bookmarks")
+        .select()
+        .eq('post_id', data.id)
+        .eq('user_id', user.id)
+        .single();
+
+        postLikeVar = postLike;
+        bookmarksVar = bookmarks;
+    }
 
     if(!data) return notFound();
 
@@ -42,11 +50,11 @@ export default async function PostDetailPage({params}) {
         <h1>{data.title}</h1>
       <div className="postActions">
         <div className="ItemPostDetails">
-          <LikeBtn postLike={postLike} post_id={data.id} />
+          <LikeBtn postLike={postLikeVar} post_id={data.id} />
           <ShowCommentBtn post_id={data.id} />
         </div>
         <div className="ItemPostDetails">
-          <KaydetBtn bookmarks={bookmarks} post_id={data.id} />
+          <KaydetBtn bookmarks={bookmarksVar} post_id={data.id} />
           <MediaSvg />
           <ShareSvg />
           <More />
